@@ -15,7 +15,7 @@ React Router https://reacttraining.com/react-router/web/guides/philosophy
 Plural Sight Course Code https://github.com/coryhouse/pluralsight-redux-starter/tree/master/src/api
 
 #Packages
-
+npm i react-router-dom
 
 ## Available Scripts
 
