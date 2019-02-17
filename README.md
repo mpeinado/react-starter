@@ -16,6 +16,7 @@ Plural Sight Course Code https://github.com/coryhouse/pluralsight-redux-starter/
 
 #Packages
 npm i react-router-dom
+npm i redux react-redux
 
 ## Available Scripts
 

@@ -12,3 +12,11 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+.todos-page .todo{
+  border: 1px solid silver;
+  padding: 5px;
+  margin-bottom: 15px;
+  text-align: center;
+  cursor: pointer;
+}
