@@ -16,6 +16,10 @@ const Navbar = (props) => {
                     </li>
 
                     <li className="nav-item">
+                        <NavLink className="nav-link" to="/posts">Post</NavLink>
+                    </li>
+
+                    <li className="nav-item">
                         <NavLink className="nav-link" to="/about">About</NavLink>
                     </li>
                 </ul>

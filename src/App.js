@@ -5,6 +5,8 @@ import Navbar from './components/Navbar';
 import TodosPage from './components/todo/TodosPage';
 import Todo from './components/todo/Todo';
 import AboutPage from './components/AboutPage';
+import PostPage from './components/post/PostPage';
+import Post from './components/post/Post';
 
 class App extends Component {
   render() {
@@ -16,7 +18,9 @@ class App extends Component {
           <Switch>
             <Route exact path="/" component={TodosPage} />
             <Route path="/about" component={AboutPage} />
-            <Route path="/:post_id" component={Todo} />
+            <Route path="/posts" component={PostPage} />
+            <Route path="/post/:post_id" component={Post} />
+            <Route path="/:todo_id" component={Todo} />
           </Switch>
         </div>
       </BrowserRouter>

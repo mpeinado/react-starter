@@ -42,7 +42,7 @@ class Post extends Component {
  * @param {*} ownProps | to get the todo id from the url 
  */
 const mapStateToProps = (state, ownProps) => {
-    const id = parseInt(ownProps.match.params.post_id);
+    const id = parseInt(ownProps.match.params.todo_id);
 
     return {
         todo: state.todos.find(todo => todo.id === id)
