@@ -1,4 +1,4 @@
-import { DELETE_TODO, DELETE_POST } from './../actions/actionTypes';
+import { DELETE_TODO, DELETE_POST, GET_POST_DATA } from './../actions/actionTypes';
 
 const initState = {
     todos: [
@@ -48,6 +48,14 @@ const rootReducer = (state = initState, action) => {
         return {
             ...state,
             posts: newPosts,
+        }
+    }
+
+    if(action.type === GET_POST_DATA) {
+        console.log("Action called to get post data");
+
+        return {
+            ...state
         }
     }
     
