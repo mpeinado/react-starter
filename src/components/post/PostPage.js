@@ -7,7 +7,6 @@ class PostPage extends Component {
 
     componentDidMount() {
         console.log("Posts page monted");
-
         // call an action to get post data 
         this.props.getPostsData();
     }

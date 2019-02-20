@@ -1,4 +1,8 @@
 export const DELETE_TODO = 'DELETE_TODO';
 
 export const GET_POST_DATA = 'GET_POST_DATA';
+export const GET_POST_SUCCEEDED = 'GET_POST_SUCCEEDED';
+export const GET_POST_FAILED = 'GET_POST_FAILED';
+
+
 export const DELETE_POST = 'DELETE_POST';

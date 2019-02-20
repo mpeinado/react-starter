@@ -3,6 +3,9 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 ##Notes
 
 ## References
+### REdux Saga 
+https://redux-saga.js.org/docs/basics/UsingSagaHelpers.html
+
 JSON Placeholder 
 https://jsonplaceholder.typicode.com/posts
 
@@ -14,7 +17,7 @@ Understanding setState() https://css-tricks.com/understanding-react-setstate/
 React Router https://reacttraining.com/react-router/web/guides/philosophy
 Plural Sight Course Code https://github.com/coryhouse/pluralsight-redux-starter/tree/master/src/api
 
-#Packages
+## Packages
 npm i react-router-dom
 npm i redux react-redux
 npm i redux-saga
