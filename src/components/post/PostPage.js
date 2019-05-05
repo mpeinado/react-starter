@@ -1,8 +1,15 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
+import { getPostDataAction } from './../../actions/PostActions';
 
 class PostPage extends Component {
+
+    componentDidMount() {
+        console.log("Posts page monted");
+        // call an action to get post data 
+        this.props.getPostsData();
+    }
     render() {
         //console.log(this.props)
         const { posts } = this.props; 
@@ -23,7 +30,7 @@ class PostPage extends Component {
             })
         ) : (
             <div className="row">
-            <div className="col">No posts yet</div>
+                <div className="col">No posts yet</div>
             </div>
         );
         return (
@@ -46,4 +53,10 @@ const mapSateToProps = (state) => {
     }
 }
 
-export default connect(mapSateToProps)(PostPage);
+const mapDispatchToProps = (dispatch) => {
+    return {
+        getPostsData: () => {dispatch(getPostDataAction())}
+    }
+}
+
+export default connect(mapSateToProps, mapDispatchToProps)(PostPage);

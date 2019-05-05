@@ -1,4 +1,4 @@
-import { DELETE_TODO, DELETE_POST } from './../actions/actionTypes';
+import { DELETE_TODO, DELETE_POST, GET_POST_SUCCEEDED, GET_POST_FAILED } from './../actions/actionTypes';
 
 const initState = {
     todos: [
@@ -48,6 +48,26 @@ const rootReducer = (state = initState, action) => {
         return {
             ...state,
             posts: newPosts,
+        }
+    }
+
+    if(action.type === GET_POST_SUCCEEDED) {
+        debugger;
+        console.log(" SUCCESS -- Action called to get post data");
+
+        return {
+            ...state,
+            posts: action.posts
+        }
+    }
+
+    if(action.type === GET_POST_FAILED) {
+        debugger;
+        console.log("FAILED -- Action called to get post data");
+
+        return {
+            ...state,
+            posts: initState.posts
         }
     }
     
