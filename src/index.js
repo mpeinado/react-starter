@@ -7,7 +7,7 @@ import { createStore, applyMiddleware } from 'redux';
 import createSagaNiddleware from 'redux-saga';
 import { Provider } from 'react-redux';
 import rootReducer from './reducers/rootReducer';
-import postDataSaga from './sagas/postSagas';
+import rootSaga from './sagas/rootSaga';
 
 // Create the saga middleware
 const sagaMiddleware = createSagaNiddleware();
@@ -18,7 +18,7 @@ const store = createStore(
 );
 
 // then run the saga
-sagaMiddleware.run(postDataSaga)
+sagaMiddleware.run(rootSaga)
 
 ReactDOM.render(
     <Provider store={store}>
