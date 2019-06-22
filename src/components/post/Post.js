@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { deletePostAction } from './../../actions/PostActions';
 
-class Post extends Component {
+class Post extends Component {z
     handelClick = () => {
         this.props.deletePost(this.props.post.id);
         this.props.history.push('/posts');

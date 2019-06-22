@@ -1,4 +1,8 @@
-import { DELETE_TODO, DELETE_POST, GET_POST_SUCCEEDED, GET_POST_FAILED } from './../actions/actionTypes';
+import { 
+    DELETE_TODO, 
+    DELETE_POST, GET_POST_SUCCEEDED, GET_POST_FAILED, 
+    GET_BASKETBALL_TEAMS_SUCCEEDED, GET_BASKETBALL_TEAMS_FAILED,
+    GET_BASKETBALL_SCORES_SUCCEEDED, GET_BASKETBALL_SCORES_FAILED } from './../actions/actionTypes';
 
 const initState = {
     todos: [
@@ -25,10 +29,34 @@ const initState = {
             "title": "ea molestias quasi exercitationem repellat qui ipsa sit aut",
             "body": "et iusto sed quo iure\nvoluptatem occaecati omnis eligendi aut ad\nvoluptatem doloribus vel accusantium quis pariatur\nmolestiae porro eius odio et labore et velit aut"
         }
+    ],
+    basketballTeams: [
+        {
+            "teamid": 1,
+            "team_name": "Denver East"
+        },
+        {
+            "teamid": 2,
+            "team_name": "Broomfield"
+        }
+    ],
+    basketballScores: [
+        {
+            "gameid": 1,
+            "opponent": "Poudre ",
+            "game_date": "11/28",
+            "location": "Game Details: Gojo Sports Tipoff Classic",
+            "notes": null,
+            "teamid": 1,
+            "game_time": "5:30p",
+            "score": "(L) 51 -'43",
+            "team_name": "Denver East"
+        }
     ]
 }
 
 const rootReducer = (state = initState, action) => {
+    /** START todos */
     if(action.type === DELETE_TODO){
         const newTodos = state.todos.filter(todos => {
             return todos.id !== action.id
@@ -39,7 +67,9 @@ const rootReducer = (state = initState, action) => {
             todos: newTodos
         }
     }
+    /** END todos */
 
+    /** START POST */
     if(action.type === DELETE_POST){
         const newPosts = state.posts.filter(post => {
             return post.id !== action.id
@@ -50,11 +80,8 @@ const rootReducer = (state = initState, action) => {
             posts: newPosts,
         }
     }
-
+    
     if(action.type === GET_POST_SUCCEEDED) {
-        debugger;
-        console.log(" SUCCESS -- Action called to get post data");
-
         return {
             ...state,
             posts: action.posts
@@ -62,12 +89,41 @@ const rootReducer = (state = initState, action) => {
     }
 
     if(action.type === GET_POST_FAILED) {
-        debugger;
-        console.log("FAILED -- Action called to get post data");
-
         return {
             ...state,
             posts: initState.posts
+        }
+    }
+    /** END POST */
+
+    /** START basketball teams */
+    if(action.type === GET_BASKETBALL_TEAMS_SUCCEEDED) {
+        return {
+            ...state,
+            basketballTeams: action.basketballTeams
+        }
+    }
+
+    if(action.type === GET_BASKETBALL_TEAMS_FAILED) {
+        return {
+            ...state,
+            basketballTeams: initState.basketballTeams
+        }
+    }
+    /** END basketball teams */
+
+    /** START basketball scores */
+    if(action.type === GET_BASKETBALL_SCORES_SUCCEEDED) {
+        return {
+            ...state,
+            basketballScores: action.basketballScores
+        }
+    }
+
+    if(action.type === GET_BASKETBALL_SCORES_FAILED) {
+        return {
+            ...state,
+            basketballScores: initState.basketballScores
         }
     }
     
