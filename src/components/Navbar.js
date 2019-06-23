@@ -3,7 +3,7 @@ import { Link, NavLink, withRouter } from 'react-router-dom';
 
 const Navbar = (props) => {
     return (
-        <nav className="navbar navbar-expand navbar-dark bg-dark">
+        <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
             <NavLink className="navbar-brand" to="/">React Starter</NavLink>
 
             <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample02" aria-controls="navbarsExample02" aria-expanded="false" aria-label="Toggle navigation">
@@ -12,7 +12,7 @@ const Navbar = (props) => {
 
             <div className="collapse navbar-collapse" id="navbarsExample02">
                 <ul className="navbar-nav mr-auto">
-                    <li className="nav-item active">
+                    <li className="nav-item">
                         <Link className="nav-link" to="/">Todos</Link>
                     </li>
 
@@ -22,6 +22,10 @@ const Navbar = (props) => {
 
                     <li className="nav-item">
                         <NavLink className="nav-link" to="/posts">Post</NavLink>
+                    </li>
+
+                    <li className="nav-item">
+                        <NavLink className="nav-link" to="/reactResearch/mainconcepts">Main Concepts</NavLink>
                     </li>
 
                     <li className="nav-item">

@@ -8,6 +8,7 @@ import AboutPage from './components/AboutPage';
 import PostPage from './components/post/PostPage';
 import Post from './components/post/Post';
 import BasketballScoresPage from './components/basketballScores/BasketballScoresPage';
+import MainConceptsPage from './components/reactResearch/mainConcepts/MainConceptsPage';
 
 class App extends Component {
   render() {
@@ -21,6 +22,7 @@ class App extends Component {
             <Route path="/baskeballScores" component={BasketballScoresPage} />>
             <Route path="/about" component={AboutPage} />
             <Route path="/posts" component={PostPage} />
+            <Route path="/reactResearch/mainconcepts" component={MainConceptsPage} />
             <Route path="/post/:post_id" component={Post} />
             <Route path="/:todo_id" component={Todo} />
           </Switch>
